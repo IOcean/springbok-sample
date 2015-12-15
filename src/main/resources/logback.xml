@@ -1,0 +1,17 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%p] %d [%t] %c{16} %M - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <logger name="fr.iocean.sample">
+        <level value="DEBUG" />
+    </logger>
+
+</configuration>
