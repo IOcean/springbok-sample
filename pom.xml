@@ -102,13 +102,13 @@
 			<artifactId>jackson-datatype-hibernate4</artifactId>
 		</dependency>
 		
+        <!-- Test -->
 		<dependency>
 			<groupId>fr.iocean.framework</groupId>
 			<artifactId>springbok-test</artifactId>
 			<version>${springbok-test.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 	
 	<build>
@@ -146,6 +146,4 @@
             </plugin>
 		</plugins>
 	</build>
-	
-
 </project>
