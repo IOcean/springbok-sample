@@ -36,30 +36,22 @@
 		<!-- tests -->
 		<assertj.version>3.0.0</assertj.version>
 		<testng.version>6.9.4</testng.version>
-
-		<!--sonar-->
-		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
-		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-		<sonar.jacoco.reportPath>target/jacoco.exec</sonar.jacoco.reportPath>
+		<springbok-core.version>0.1-SNAPSHOT</springbok-core.version>
+		<springbok-security.version>0.1-SNAPSHOT</springbok-security.version>
+		<springbok-test.version>0.1-SNAPSHOT</springbok-test.version>
 		
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-freemarker</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>fr.iocean.framework</groupId>
 			<artifactId>springbok-core</artifactId>
-			<version>0.1-SNAPSHOT</version>
+			<version>${springbok-core.version}</version>
 		</dependency>
-		
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<groupId>fr.iocean.framework</groupId>
+			<artifactId>springbok-security</artifactId>
+			<version>${springbok-security.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -105,32 +97,12 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
+			<groupId>fr.iocean.framework</groupId>
+			<artifactId>springbok-test</artifactId>
+			<version>${springbok-test.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>${testng.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>${assertj.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.jayway.jsonpath</groupId>
-			<artifactId>json-path</artifactId>
-			<scope>test</scope>
-		</dependency>
+
 	</dependencies>
 	
 	<build>

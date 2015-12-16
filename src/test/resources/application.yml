@@ -1,20 +1,20 @@
 spring:
     datasource:
-        dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
-        url:
-        databaseName: springbok-sample
-        serverName: localhost
-        username: springbok
-        password: springbok
+        dataSourceClassName: org.h2.jdbcx.JdbcDataSource
+        url: jdbc:h2:mem:h2dbmem;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        databaseName:
+        serverName:
+        username:
+        password:
 
     jpa:
-        database-platform: org.hibernate.dialect.PostgreSQL9Dialect
-        database: POSTGRESQL
+        database-platform: org.hibernate.dialect.H2Dialect
+        database: H2
         openInView: false
         show_sql: true
-        generate-ddl: false
+        generate-ddl: true
         hibernate:
-             ddl-auto: validate
+             ddl-auto: create
              naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
         properties:
              hibernate.cache.use_second_level_cache: true
@@ -23,7 +23,4 @@ spring:
              hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
 
 flyway:
-    enabled: true
-    
-api:
-    root.path=/api
+    enabled: false
