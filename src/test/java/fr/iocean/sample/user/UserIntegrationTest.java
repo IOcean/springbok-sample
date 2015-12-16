@@ -15,7 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringApplicationConfiguration(classes = Application.class)
 @ActiveProfiles("test")
-public class UserIT extends SecuredIntegrationTest {
+public class UserIntegrationTest extends SecuredIntegrationTest {
     
     @WithMockUser(roles = "USER")
     @Test
