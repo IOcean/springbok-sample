@@ -1,11 +1,10 @@
 package fr.iocean.sample.user;
 
 import fr.iocean.framework.test.integration.SecuredIntegrationTest;
-import fr.iocean.sample.Application;
+import fr.iocean.sample.SpringbokSampleApplication;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.testng.annotations.Test;
 
@@ -13,8 +12,7 @@ import static fr.iocean.sample.SpringbokSampleApplication.API_ROOT_PATH;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringApplicationConfiguration(classes = Application.class)
-@ActiveProfiles("test")
+@SpringApplicationConfiguration(classes = SpringbokSampleApplication.class)
 public class UserIntegrationTest extends SecuredIntegrationTest {
     
     @WithMockUser(roles = "USER")
