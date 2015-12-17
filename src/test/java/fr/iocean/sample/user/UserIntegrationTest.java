@@ -15,9 +15,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringApplicationConfiguration(classes = SpringbokSampleApplication.class)
 public class UserIntegrationTest extends SecuredIntegrationTest {
     
-    @WithMockUser(roles = "USER")
+    @WithMockUser(roles = "VIEW")
     @Test
-    public void testDeleteUserWithoutAdminPermission() throws Exception {
+    public void testDeleteUserWithoutDeletePermission() throws Exception {
         mockMvc
                 .perform(delete(API_ROOT_PATH + "/users")
                         .contentType(MediaType.APPLICATION_JSON))
@@ -25,7 +25,7 @@ public class UserIntegrationTest extends SecuredIntegrationTest {
                 .andExpect(status().isForbidden());
     }
 
-    @WithMockUser(roles = "ADMIN")
+    @WithMockUser(roles = "DELETE")
     @Test
     public void testDeleteUserOk() throws Exception {
         mockMvc

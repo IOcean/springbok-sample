@@ -25,8 +25,5 @@ spring:
     mail:
         enable: false
 
-flyway:
-    enabled: true
-    
 api:
     root.path=/api
