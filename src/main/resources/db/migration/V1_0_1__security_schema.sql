@@ -37,6 +37,7 @@ CREATE TABLE user_profile
 CREATE TABLE credential
 (
   id bigserial NOT NULL,
+  application character varying(255) NOT NULL,
   label character varying(255) NOT NULL,
   CONSTRAINT credential_pkey PRIMARY KEY (id),
   CONSTRAINT uk_credential_label UNIQUE (label)

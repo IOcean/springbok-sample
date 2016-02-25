@@ -1,5 +1,5 @@
-INSERT INTO credential(id, label) VALUES
-(1, 'ADMINISTRATION');
+INSERT INTO credential(id, application, label) VALUES
+(1, 'APP', 'ADMINISTRATION');
 
 INSERT INTO profile(id, label) VALUES
 (1, 'ADMIN');
