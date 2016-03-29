@@ -5,18 +5,20 @@ import fr.iocean.sample.api.user.model.User;
 import fr.iocean.sample.api.user.model.UserSearch;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.Criteria;
+import org.hibernate.FetchMode;
 import org.hibernate.Query;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Junction;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.sql.JoinType;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
-public class UserRepositoryImpl extends AbstractResourceRepository<User> implements UserRepositoryCustom{
+public class UserRepositoryImpl extends AbstractResourceRepository<User> implements UserRepositoryCustom {
     
     @Override
     protected Class<User> getEntityClass() {
@@ -51,8 +53,10 @@ public class UserRepositoryImpl extends AbstractResourceRepository<User> impleme
 
     private void constructQuerySearch(Criteria query, UserSearch searchBean) {
 
+        
         if (searchBean.enabled != null) {
-            query.add(Restrictions.eq("enabled", searchBean.enabled));
+            query.createAlias("account", "account", JoinType.INNER_JOIN);
+            query.add(Restrictions.eq("account.enabled", searchBean.enabled));
         }
 
         Junction or = null;

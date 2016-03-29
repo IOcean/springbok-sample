@@ -1,7 +1,7 @@
 package fr.iocean.sample.api.user.repository;
 
-import fr.iocean.framework.security.repository.UserDetailsRepository;
+import fr.iocean.framework.core.resource.repository.ResourceRepository;
 import fr.iocean.sample.api.user.model.User;
 
-public interface UserRepository extends UserDetailsRepository<User, Long>, UserRepositoryCustom {
+public interface UserRepository extends ResourceRepository<User, Long>, UserRepositoryCustom {
 }
