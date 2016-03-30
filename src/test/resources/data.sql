@@ -4,9 +4,9 @@ INSERT INTO credential(id, label) VALUES
 (3, 'UPDATE'),
 (4, 'DELETE');
 
-INSERT INTO profile(id, label) VALUES
-(1, 'ADMIN'),    
-(2, 'USER'); 
+INSERT INTO profile(id, label, active) VALUES
+(1, 'ADMIN', true),    
+(2, 'USER', true); 
 
 INSERT INTO profile_credential(id, profile_id, credential_id) VALUES 
 (1, 1, 1),
