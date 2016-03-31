@@ -16,6 +16,7 @@ CREATE TABLE profile
 (
   id bigserial NOT NULL,
   label character varying(255) NOT NULL,
+  active boolean NOT NULL DEFAULT TRUE,
   CONSTRAINT profile_pkey PRIMARY KEY (id),
   CONSTRAINT uk_profile_label UNIQUE (label)
 );
