@@ -13,8 +13,8 @@ public class SecurityTestConfiguration extends FormAuthentication {
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
         http
-                .csrf()
-                .disable();
+            .csrf()
+            .disable();
     }
     
 }

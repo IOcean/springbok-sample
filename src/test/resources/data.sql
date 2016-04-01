@@ -1,8 +1,8 @@
-INSERT INTO credential(id, label) VALUES
-(1, 'CREATE'),
-(2, 'VIEW'),
-(3, 'UPDATE'),
-(4, 'DELETE');
+INSERT INTO credential(id, application, label) VALUES
+(1, 'INTRANET', 'CREATE'),
+(2, 'INTRANET', 'VIEW'),
+(3, 'INTRANET', 'UPDATE'),
+(4, 'INTRANET', 'DELETE');
 
 INSERT INTO profile(id, label, active) VALUES
 (1, 'ADMIN', true),    
@@ -29,4 +29,3 @@ INSERT INTO user_(id, account_id, first_name, last_name) VALUES
 (1, 1, 'Admin', 'Admin'),
 (2, 2, 'Johnathan', 'Scurfield'),
 (3, 3, '', 'Iocean');
-

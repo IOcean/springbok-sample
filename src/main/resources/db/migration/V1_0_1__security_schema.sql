@@ -1,4 +1,4 @@
-CREATE TABLE user_
+CREATE TABLE account
 (
   id bigserial NOT NULL,
   email character varying(255) NOT NULL,
@@ -7,9 +7,20 @@ CREATE TABLE user_
   signedup_date timestamp without time zone,
   token character varying(255) NOT NULL,
   username character varying(30) NOT NULL,
-  CONSTRAINT user__pkey PRIMARY KEY (id),
-  CONSTRAINT uk_user_email UNIQUE (email),
-  CONSTRAINT uk_user_username UNIQUE (username)
+  CONSTRAINT account__pkey PRIMARY KEY (id),
+  CONSTRAINT uk_account_email UNIQUE (email),
+  CONSTRAINT uk_account_username UNIQUE (username)
+);
+
+CREATE TABLE user_
+(
+  id bigserial NOT NULL,
+  account_id bigint,
+  firstname character varying(255) NOT NULL,
+  lastname character varying(255) NOT NULL,
+  CONSTRAINT user_pkey PRIMARY KEY (id),
+  CONSTRAINT fk_user_account_account_id FOREIGN KEY (account_id)
+      REFERENCES account (id) 
 );
 
 CREATE TABLE profile
@@ -21,17 +32,17 @@ CREATE TABLE profile
   CONSTRAINT uk_profile_label UNIQUE (label)
 );
 
-CREATE TABLE user_profile
+CREATE TABLE profile_account
 (
   id bigserial NOT NULL,
-  profiledetails_id bigint NOT NULL,
-  userdetails_id bigint NOT NULL,
-  CONSTRAINT user_profile_pkey PRIMARY KEY (id),
-  CONSTRAINT fk_user_profile_profiledetails_id FOREIGN KEY (profiledetails_id)
+  profile_id bigint NOT NULL,
+  account_id bigint NOT NULL,
+  CONSTRAINT profile_account_pkey PRIMARY KEY (id),
+  CONSTRAINT fk_profile_account_profile_id FOREIGN KEY (profile_id)
       REFERENCES profile (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION,
-  CONSTRAINT fk_user_profile_userdetails_id FOREIGN KEY (userdetails_id)
-      REFERENCES user_ (id) MATCH SIMPLE
+  CONSTRAINT fk_profile_account_account_id FOREIGN KEY (account_id)
+      REFERENCES account(id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
@@ -47,13 +58,13 @@ CREATE TABLE credential
 CREATE TABLE profile_credential
 (
   id bigserial NOT NULL,
-  credentialdetails_id bigint NOT NULL,
-  profiledetails_id bigint NOT NULL,
+  credential_id bigint NOT NULL,
+  profile_id bigint NOT NULL,
   CONSTRAINT profile_credential_pkey PRIMARY KEY (id),
-  CONSTRAINT fk_profile_credential_profiledetails_id FOREIGN KEY (profiledetails_id)
+  CONSTRAINT fk_profile_credential_profile_id FOREIGN KEY (profile_id)
       REFERENCES profile (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION,
-  CONSTRAINT fk_profile_credential_credentialdetails_id FOREIGN KEY (credentialdetails_id)
+  CONSTRAINT fk_profile_credential_credential_id FOREIGN KEY (credential_id)
       REFERENCES credential (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
 );

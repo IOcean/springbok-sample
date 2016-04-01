@@ -1,15 +1,26 @@
 INSERT INTO credential(id, application, label) VALUES
-(1, 'APP', 'ADMINISTRATION');
+(1, 'INTRANET', 'CREATE'),
+(2, 'INTRANET', 'VIEW'),
+(3, 'INTRANET', 'UPDATE'),
+(4, 'INTRANET', 'DELETE');
 
-INSERT INTO profile(id, label) VALUES
-(1, 'ADMIN');
+INSERT INTO profile(id, label, active) VALUES
+(1, 'ADMIN', true),    
+(2, 'USER', true); 
 
-INSERT INTO profile_credential(id, profiledetails_id, credentialdetails_id) VALUES 
+INSERT INTO profile_credential(id, profile_id, credential_id) VALUES 
+(1, 1, 1),
+(2, 1, 2),
+(3, 1, 3),
+(4, 1, 4),
+(5, 2, 2);
+
+INSERT INTO account(id, email, username, password, token, signedup_date, enabled) VALUES 
+(1, 'admin@iocean.fr', 'Admin', '$2a$10$ggIHKT/gYkYk0Bt2yP4xvOybahPn7GfSwC0T3fYhCzrZ9ta9LAYt6', 'b5e655641f1d05a415d5ea30d4fd25dcd03ea4a187c5d121d221454c03770f9f98101c206878b25697a79c924149da6802af8e97fbed4999c0dd838577590d9e', '2015-06-02 11:00:00', true);
+
+INSERT INTO profile_account(id, account_id, profile_id) VALUES 
 (1, 1, 1);
 
-INSERT INTO user_(id, email, username, password, token, signedup_date, enabled) VALUES 
-(1, 'admin@iocean.fr', 'admin', '$2a$10$Gdut0FQgJ9qxNvLLShDyW./sh1scqFYDjT6I.ClHwZMW.LP82nude', 'b5e655641f1d05a415d5ea30d4fd25dcd03ea4a187c5d121d221454c03770f9f98101c206878b25697a79c924149da6802af8e97fbed4999c0dd838577590d9e', '2015-06-02 11:00:00', true);
-
-INSERT INTO user_profile(id, userdetails_id, profiledetails_id) VALUES 
-(1, 1, 1);
+INSERT INTO user_(id, account_id, firstname, lastname) VALUES 
+(1, 1, 'Admin', 'Admin');
 
