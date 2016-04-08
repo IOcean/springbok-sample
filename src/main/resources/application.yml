@@ -2,7 +2,7 @@ server:
     port: 8080
 spring:
     profiles:
-        active: cors
+        active: cors 
     datasource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
         url:
@@ -28,6 +28,5 @@ spring:
 
     mail:
         enable: false
-
 api:
-    root.path:/api
+    root.path: /api

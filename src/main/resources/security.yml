@@ -1,8 +1,0 @@
-api:
-    root.path=/api
-authentication:
-    endpoint=/authentication
-    logout.endpoint=/logout
-    session.timeout=300
-    username.parameter=username
-    password.parameter=password
