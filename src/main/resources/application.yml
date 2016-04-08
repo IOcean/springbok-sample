@@ -28,5 +28,3 @@ spring:
 
     mail:
         enable: false
-api:
-    root.path: /api
