@@ -1,8 +1,8 @@
 package fr.iocean.sample.api.user.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import fr.iocean.framework.core.exception.PageRequestException;
 import fr.iocean.framework.core.resource.controller.DeletableResourceController;
-import fr.iocean.framework.core.resource.exception.PageRequestException;
 import fr.iocean.framework.core.util.PageUtils;
 import fr.iocean.sample.api.user.model.User;
 import fr.iocean.sample.api.user.model.UserSearch;
@@ -19,7 +19,7 @@ import static fr.iocean.sample.SpringbokSampleApplication.API_ROOT_PATH;
 @RestController
 @RequestMapping(value = API_ROOT_PATH + "/users")
 public class UserController extends DeletableResourceController<User, Long, UserService> {
-    
+
     @PreAuthorize("hasRole('DELETE')")
     @Override
     public void deleteAll() {
