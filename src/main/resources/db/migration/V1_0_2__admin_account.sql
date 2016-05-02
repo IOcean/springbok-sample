@@ -15,8 +15,8 @@ INSERT INTO profile_credential(id, profile_id, credential_id) VALUES
 (4, 1, 4),
 (5, 2, 2);
 
-INSERT INTO account(id, email, username, password, token, signedup_date, enabled) VALUES 
-(1, 'admin@iocean.fr', 'Admin', '$2a$04$LW6Bs3Wb7AWkg1kCSsuqsuMN1Gjs3qXFASZwfJEO/0Oi/AjpD5wNa', 'b5e655641f1d05a415d5ea30d4fd25dcd03ea4a187c5d121d221454c03770f9f98101c206878b25697a79c924149da6802af8e97fbed4999c0dd838577590d9e', '2015-06-02 11:00:00', true);
+INSERT INTO account(id, email, username, password, signedup_date, enabled) VALUES 
+(1, 'admin@iocean.fr', 'Admin', '$2a$04$LW6Bs3Wb7AWkg1kCSsuqsuMN1Gjs3qXFASZwfJEO/0Oi/AjpD5wNa', '2015-06-02 11:00:00', true);
 
 INSERT INTO profile_account(id, account_id, profile_id) VALUES 
 (1, 1, 1);

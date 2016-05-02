@@ -5,7 +5,6 @@ CREATE TABLE account
   enabled boolean NOT NULL DEFAULT FALSE,
   password character varying(255),
   signedup_date timestamp without time zone,
-  token character varying(255) NOT NULL,
   username character varying(30) NOT NULL,
   CONSTRAINT account__pkey PRIMARY KEY (id),
   CONSTRAINT uk_account_email UNIQUE (email),
