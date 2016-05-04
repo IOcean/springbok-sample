@@ -36,9 +36,9 @@
 		<!-- tests -->
 		<assertj.version>3.0.0</assertj.version>
 		<testng.version>6.9.4</testng.version>
-		<springbok-core.version>0.1-SNAPSHOT</springbok-core.version>
-		<springbok-security.version>0.1-SNAPSHOT</springbok-security.version>
-		<springbok-test.version>0.1-SNAPSHOT</springbok-test.version>
+		<springbok-core.version>0.0.1-SNAPSHOT</springbok-core.version>
+		<springbok-security.version>0.0.1-SNAPSHOT</springbok-security.version>
+		<springbok-test.version>0.0.1-SNAPSHOT</springbok-test.version>
 		
         <!-- sonar -->
         <surefire-plugin.version>2.19</surefire-plugin.version>
