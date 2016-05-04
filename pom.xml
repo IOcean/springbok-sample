@@ -5,7 +5,7 @@
 
 	<groupId>fr.iocean.framework</groupId>
 	<artifactId>springbok-sample</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<name>springbok-sample</name>
