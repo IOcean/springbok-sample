@@ -1,0 +1,6 @@
+#!/bin/bash
+npm install &&
+jspm clean &&
+jspm install &&
+gulp clean &&
+gulp build $1

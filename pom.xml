@@ -150,7 +150,7 @@
                             <workingDirectory>ui</workingDirectory>
                             <executable>sh</executable>
                             <arguments>
-                                <argument>compile-ui</argument>
+                                <argument>build-ui</argument>
                                 <argument>--dev</argument>
                             </arguments>
                         </configuration>
@@ -177,7 +177,7 @@
                             <workingDirectory>ui</workingDirectory>
                             <executable>sh</executable>
                             <arguments>
-                                <argument>compile-ui</argument>
+                                <argument>build-ui</argument>
                                 <argument>--rec</argument>
                             </arguments>
                         </configuration>
@@ -204,7 +204,7 @@
                             <workingDirectory>ui</workingDirectory>
                             <executable>sh</executable>
                             <arguments>
-                                <argument>compile-ui</argument>
+                                <argument>build-ui</argument>
                                 <argument>--prod</argument>
                             </arguments>
                         </configuration>
