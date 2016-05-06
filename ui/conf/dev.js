@@ -1,6 +1,6 @@
 const CONFIG = {
     api : {
-        endpoint: 'http://localhost:8080/springbok/api/'
+        endpoint: 'http://localhost:8080/api/'
     },
     app: {
         logDebugEnabled: true,

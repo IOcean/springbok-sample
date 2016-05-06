@@ -70,8 +70,8 @@
       "jashkenas/underscore": "github:jashkenas/underscore@^1.8.3",
       "jquery": "npm:jquery@^2.2.3",
       "necolas/normalize.css": "github:necolas/normalize.css@^3.0.3",
-      "springbok/springbok-spa-core": "iocean:springbok-spa-core@master",
-      "springbok/springbok-spa-security": "iocean:springbok-spa-security@master",
+      "springbok/springbok-spa-core": "github:iocean/springbok-spa-core@master",
+      "springbok/springbok-spa-security": "github:iocean/springbok-spa-security@master",
       "twbs/bootstrap": "github:twbs/bootstrap@^3.3.6"
     },
     "devDependencies": {

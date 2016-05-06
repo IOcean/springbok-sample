@@ -50,8 +50,9 @@ const libs = {
             paths.libs + 'github/angular-translate/bower-angular-translate@2.9.2/angular-translate.js',
             paths.libs + 'github/angular-translate/bower-angular-translate-loader-static-files@2.9.2/angular-translate-loader-static-files.js',
             paths.libs + 'github/angular-translate/bower-angular-translate-handler-log@2.9.2/angular-translate-handler-log.js',
-            paths.libs + 'iocean/springbok-spa-core@master/dist/springbok-spa-core.js',
-            paths.libs + 'iocean/springbok-spa-security@master/dist/springbok-spa-security.js',
+            paths.libs + 'github/twbs/bootstrap@3.3.6/js/bootstrap.js',
+            paths.libs + 'github/iocean/springbok-spa-core@master/dist/springbok-spa-core.js',
+            paths.libs + 'github/iocean/springbok-spa-security@master/dist/springbok-spa-security.js',
             paths.libs + 'github/angular-ui/bootstrap-bower@1.3.1/ui-bootstrap.js',
             paths.libs + 'github/angular-ui/bootstrap-bower@1.3.1/ui-bootstrap-tpls.js',
             paths.libs + 'iocean-private/springbok/ace-admin@master/assets/js/ace.js'
@@ -77,8 +78,9 @@ const libs = {
             paths.libs + 'github/angular-translate/bower-angular-translate@2.9.2/angular-translate.min.js',
             paths.libs + 'github/angular-translate/bower-angular-translate-loader-static-files@2.9.2/angular-translate-loader-static-files.min.js',
             paths.libs + 'github/angular-translate/bower-angular-translate-handler-log@2.9.2/angular-translate-handler-log.js',
-            paths.libs + 'iocean/springbok-spa-core@master/dist/springbok-spa-core.min.js',
-            paths.libs + 'iocean/springbok-spa-security@master/dist/springbok-spa-security.min.js',
+            paths.libs + 'github/twbs/bootstrap@3.3.6/js/bootstrap.min.js',
+            paths.libs + 'github/iocean/springbok-spa-core@master/dist/springbok-spa-core.min.js',
+            paths.libs + 'github/iocean/springbok-spa-security@master/dist/springbok-spa-security.min.js',
             paths.libs + 'github/angular-ui/bootstrap-bower@1.3.1/ui-bootstrap.min.js',
             paths.libs + 'github/angular-ui/bootstrap-bower@1.3.1/ui-bootstrap-tpls.min.js',
             paths.libs + 'iocean-private/springbok/ace-admin@master/dist/js/ace.min.js'

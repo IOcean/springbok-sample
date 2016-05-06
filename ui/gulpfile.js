@@ -1,4 +1,4 @@
-'use-strict';
+'use strict';
 
 const gulp = require('gulp'),
     argv = require('yargs').argv,
@@ -13,7 +13,7 @@ const gulp = require('gulp'),
     sass = require('gulp-sass'),
     cssnano = require('gulp-cssnano'),
     uglify = require('gulp-uglify'),
-    concat = require('gulp-concat')
+    concat = require('gulp-concat'),
     imagemin = require('gulp-imagemin'),
     jsonminify = require('gulp-jsonminify'),
     gulpif = require('gulp-if'),
@@ -58,14 +58,12 @@ gulp.task('libraries', function() {
     gulp.src(libsCss)
         .pipe(plumber())
         .pipe(concat('vendor.min.css'))
-//        .pipe(gulpif(getEnvironmentName() !== 'dev', cssnano()))
         .pipe(gulp.dest(CONFIG.paths.build + 'assets/stylesheets/'))
         .pipe(browserSync.stream());
 
     return gulp.src(libsJs)
         .pipe(plumber())
         .pipe(concat('vendor.min.js'))
-//        .pipe(gulpif(getEnvironmentName() !== 'dev', uglify()))
         .pipe(gulp.dest(CONFIG.paths.build + 'assets/javascript/'))
         .pipe(browserSync.stream());
 });
