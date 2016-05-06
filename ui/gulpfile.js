@@ -135,7 +135,7 @@ function i18n() {
     return gulp.src(CONFIG.paths.i18n + '*.json')
         .pipe(plumber())
         .pipe(gulpif(getEnvironmentName() !== 'dev', jsonminify()))
-        .pipe(gulp.dest(CONFIG.paths.build + "i18n/"))
+        .pipe(gulp.dest(CONFIG.paths.build + 'i18n/'))
         .pipe(browserSync.stream());
 }
 
