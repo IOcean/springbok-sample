@@ -1,0 +1,30 @@
+<div class="navbar-container navbar-fixed-top">
+    <div class="navbar-header pull-left ">
+        <a ng-href="#/" class="navbar-brand">
+            <small>
+                <span class="hidden-phone">{{'HEADER_BRAND' | translate}} - </span>
+                {{'HEADER_MAIN_SPACE' | translate }}
+            </small>
+        </a>
+    </div>
+    <div class="pull-right nav-bar-header navbar-buttons">
+        <ul class="nav ace-nav">
+            <li  class="spinner" ng-if="root.showSpinner">
+                <span class="fa fa-2x fa-spinner fa-spin"></span>
+            </li>
+            <li class="green"
+                ng-if="authentication.session.account.authenticated">
+                <a href="#/comptes/utilisateurs/{{authentication.session.account.infos.id}}">
+                    {{'SECURITY_PROFILE' | translate }}
+                </a>
+            </li>
+            <li class="grey"
+                ng-if="authentication.session.account.authenticated">
+                <a href="#/accueil" ng-click="authentication.logout()">
+                    <i class="ace-icon fa fa-power-off"></i>
+                    {{'SECURITY_LOGOUT' | translate}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

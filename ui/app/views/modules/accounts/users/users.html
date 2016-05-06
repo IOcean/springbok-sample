@@ -1,0 +1,73 @@
+<form class="row form-horizontal" novalidate>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label class="control-label col-sm-5" for="username">{{'ACCOUNTS_USERS_USERNAME' | translate}} : </label>
+            <div class="col-sm-7">
+                <input id="username" type="text" class="form-control"
+                       ng-model="users.form.username"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-5" for="email">{{'GLOBAL_EMAIL' | translate}} : </label>
+            <div class="col-sm-7">
+                <input id="email" type="text" class="form-control"
+                       ng-model="users.form.email"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-5" for="email">{{'GLOBAL_STATUS' | translate}} : </label>
+            <div class="col-sm-7">
+                <input name="status" class="ace ace-switch ace-switch-6" type="checkbox"
+                       ng-model="users.form.enabled">
+                <span class="lbl margin-top-xs">&nbsp; {{users.form.enabled | statusKey | translate}}</span>
+            </div>
+        </div>
+        <div class="col-sm-7 col-sm-offset-5">
+            <button class="btn btn-info"
+                    ng-click="users.search.search()">
+                <i class="ace-icon fa fa-refresh"></i>
+                {{'GLOBAL_SEARCH' | translate}}
+            </button>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label class="control-label col-sm-5" for="signedUpDate">{{'ACCOUNTS_USERS_SIGNEDUPDATE' | translate}} : </label>
+            <div class="col-sm-7">
+                <input id="signedUpDate" type="date" class="form-control"
+                       ng-model="users.form.signedUpDate"/>
+            </div>
+        </div>
+    </div>
+</form>
+
+<sb-search-header search="users.search"></sb-search-header>
+
+<table class="table table-striped table-bordered table-hover"
+       ng-show="users.search.results.totalElements > 0">
+    <thead> 
+        <tr>
+            <th class="pointer"
+                ng-class="column.cssClasses"
+                ng-repeat="column in users.search.configuration.columnList"
+                ng-click="users.search.orderBy(column.name)">
+                <i class="fa"
+                    ng-class="(users.search.configuration.columns[column.name] === 'asc')  ? 'fa-caret-down' : 'fa-caret-up'"></i>
+                {{column.key | translate}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in users.search.results.content">
+            <td>
+                <a href="#/comptes/utilisateurs/{{user.id}}">
+                    {{user.username}}
+                </a>
+            </td>
+            <td>{{user.email}}</td>
+            <td>{{user.signedUpDate | date:'fullDate'}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<sb-search-footer search="users.search"></sb-search-footer>

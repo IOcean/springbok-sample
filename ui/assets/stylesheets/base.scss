@@ -1,0 +1,43 @@
+$mainFont: 'Open sans', sans-serif;
+
+/* Commons */
+body {
+    font-family: $mainFont;
+}
+
+.float-left {
+    float: left;
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+
+form .well .btn-app {
+    font-size: 0.85em !important;
+}
+
+form label {
+    font-weight: 700;
+}
+
+.margin-top-xs {
+    margin-top: 5px !important;
+}
+
+ul.pagination-sm {
+    margin: 0;
+}
+
+/* Springbok */
+.sidebar-shortcuts-large {
+    padding: 7.5% 0;
+}
+
+.nav-hide {
+    display: none !important;
+}
+
+.nav-show {
+    display: block !important;
+}

@@ -1,0 +1,29 @@
+<div>
+    <div class="page-header">
+        <h1>
+            {{'SECURITY_LOGIN_TITLE'| translate}}
+            <small>
+                <i class="fa fa-angle-double-right"></i>
+                {{'SECURITY_LOGIN_SUBTITLE'| translate}}
+            </small>
+        </h1>
+    </div>
+
+    <form class="form-horizontal col-md-2" ng-submit="authentication.login()">
+        <div class="form-group">
+            <label class="form-label" for="login">{{'SECURITY_LOGIN_LOGIN'| translate}}</label>
+            <input class="form-control" type="text" id="login" placeholder="{{'SECURITY_LOGIN_LOGIN'| translate}} ..." required
+                   ng-model="authentication.session.account.username"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="password">{{'SECURITY_LOGIN_PASSWORD'| translate}}</label>
+            <input class="form-control" type="password" id="password" placeholder="{{'SECURITY_LOGIN_PASSWORD'| translate}} ..." required 
+                   ng-model="authentication.session.account.password"/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-info btn-small form-control" type="submit">
+                {{'SECURITY_LOGIN_BUTTION' | translate}} <i class="fa fa-sign-in fa icon-on-right bigger-110"></i>
+            </button>
+        </div>
+    </form>
+</div>

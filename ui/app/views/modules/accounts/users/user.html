@@ -1,0 +1,56 @@
+<form class="row"
+    ng-switch="user.inEdition"
+    ng-submit="user.save()">
+    <h1 class="page-header lighter blue col-sm-12">
+        {{user.username}}
+        <span class="btn-group">
+            <button class="btn btn-white btn-primary"
+                    type="button"
+                    ng-switch-default
+                    ng-click="user.edit()">
+                <i class="ace-icon fa fa-pencil"></i>
+                {{'GLOBAL_EDIT' | translate}}
+            </button>
+            <button class="btn btn-white btn-success"
+                    type="submit"
+                    ng-switch-when="true">
+                <i class="ace-icon fa fa-check"></i>
+                {{'GLOBAL_SAVE' | translate}}
+            </button>
+        </span>
+    </h1>
+
+    <fieldset class="col-sm-4">
+        <legend class="header smaller lighter orange">{{'GLOBAL_GENERAL_INFORMATIONS' | translate}}</legend>
+        <div class="form-group">
+            <label for="username">{{'ACCOUNTS_USERS_USERNAME' | translate}} : </label>
+            <input id="username" type="text" class="form-control" minlength="3" maxlength="30" required
+                   ng-switch-when="true"
+                   ng-model="user.current.username"/>
+            <span ng-switch-default><br/>{{user.current.username}}</span>
+        </div>
+        <div class="form-group">
+            <label for="email">{{'GLOBAL_EMAIL' | translate}} : </label>
+            <input id="email" type="email" class="form-control" required
+                   ng-switch-when="true"
+                   ng-model="user.current.email"/>
+            <span ng-switch-default><br/>{{user.current.email}}</span>
+        </div>
+        <div class="form-group">
+            <label>{{'GLOBAL_STATUS' | translate}} :</label>
+            <br/>
+            <input name="status" class="ace ace-switch ace-switch-6" type="checkbox"
+                   ng-switch-when="true"
+                   ng-model="user.current.enabled">
+            <span class="lbl"
+                  ng-switch-when="true">&nbsp; {{user.current.enabled | statusKey | translate}}</span>
+
+            <span ng-switch-default>{{user.current.enabled | statusKey | translate}}</span>
+        </div>
+        <div class="form-group">
+            <label>{{'ACCOUNTS_USERS_SIGNEDUPDATE' | translate}} : </label>
+            <br/>
+            <span>{{user.current.signedUpDate | date:'fullDate'}}</span>
+        </div>
+    </fieldset>
+</form>

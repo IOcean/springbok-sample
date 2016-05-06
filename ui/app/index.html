@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="rootController as root">
+    <head>
+        <title translate="{{root.currentPage.htmlTitleKey}}"></title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,400italic,700,600italic,700italic,800italic,800' rel='stylesheet' type='text/css'>
+        <link href="assets/stylesheets/vendor.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/stylesheets/main.min.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="favicon.ico">
+    </head>
+    <body class="no-skin"
+          ng-controller="authenticationController as authentication">
+        <sb-notification show="root.notification.show"
+                         type="{{root.notification.type}}"
+                         message="root.notification.message">
+        </sb-notification>
+
+        <header class="navbar navbar-default ace-save-state navbar-fixed-top no-print">
+            <ng-include src="'views/commons/header.html'"></ng-include>
+        </header>
+        
+        <section class="main-container clearfix">
+            <nav id="sidebar" class="sidebar responsive no-print"
+                ng-include src="'views/commons/menu.html'" 
+                ng-class="{'menu-min' : menu.isMinified}"
+                ng-show="authentication.session.account.authenticated">
+            </nav>
+
+            <section class="main-content clearfix">
+                 <div id="breadcrumbs" class="breadcrumbs no-print"
+                    ng-if="authentication.session.account.authenticated && root.currentPage.breadcrumbsUrl !== null">
+                    <ng-include src="'views/commons/breadcrumbs.html'"></ng-include>
+                </div>
+                
+                <div class="main-content-inner page-content" 
+                    ng-if="authentication.session.account.authenticated">
+                    <header class="page-header">
+                        <h1>
+                            {{root.currentPage.headerKey | translate}}
+                            <small>
+                                <i class="ace-icon fa fa-angle-double-right"></i>
+                                {{root.currentPage.subHeaderKey | translate}}
+                            </small>
+                        </h1>
+                    </header>
+                    <div ng-view>
+                    </div>
+                </div>
+                <div class="main-content-inner page-content" 
+                    ng-if="!authentication.session.account.authenticated">
+                    <ng-include src="'views/commons/login.html'"></ng-include>
+                </div>
+            </section>
+        </section>
+    
+        <script src="assets/javascript/vendor.min.js"></script>
+        <script src="assets/javascript/main.min.js"></script>
+    </body>
+</html>
