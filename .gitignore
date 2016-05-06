@@ -54,3 +54,19 @@ test_output/
 nb-configuration.xml
 /src/main/resources/jasper/MyReports/*
 nbactions.xml
+
+# NetBeans
+nbproject/
+
+# Bower
+bower_components/
+
+# NodeJS
+node_modules/
+npm-debug.log
+
+# Build
+dist/
+
+# JSPM
+jspm_packages/
