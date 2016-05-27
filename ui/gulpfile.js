@@ -114,8 +114,8 @@ function handleError(err) {
 function getEnvironmentName() {
     var environmentName = 'dev';
     
-    if (argv.rec) {
-        environmentName = 'rec';
+    if (argv.int) {
+        environmentName = 'int';
     } else if (argv.prod) {
         environmentName = 'prod';
     }
