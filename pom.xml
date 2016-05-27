@@ -178,7 +178,7 @@
                             <executable>sh</executable>
                             <arguments>
                                 <argument>build-ui</argument>
-                                <argument>--rec</argument>
+                                <argument>--int</argument>
                             </arguments>
                         </configuration>
                     </plugin>
