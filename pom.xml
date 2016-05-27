@@ -159,7 +159,7 @@
             </build>
         </profile>
         <profile>
-            <id>rec</id>
+            <id>int</id>
             <build>
                 <plugins>
                     <plugin>
