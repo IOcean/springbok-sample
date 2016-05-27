@@ -58,12 +58,14 @@ gulp.task('libraries', function() {
     gulp.src(libsCss)
         .pipe(plumber())
         .pipe(concat('vendor.min.css'))
+        .pipe(gulpif(getEnvironmentName() !== 'dev', cssnano()))
         .pipe(gulp.dest(CONFIG.paths.build + 'assets/stylesheets/'))
         .pipe(browserSync.stream());
 
     return gulp.src(libsJs)
         .pipe(plumber())
         .pipe(concat('vendor.min.js'))
+        .pipe(gulpif(getEnvironmentName() !== 'dev', uglify()))
         .pipe(gulp.dest(CONFIG.paths.build + 'assets/javascript/'))
         .pipe(browserSync.stream());
 });
@@ -80,7 +82,7 @@ gulp.task('webserver', function() {
     return browserSync.init(CONFIG.server);
 });
 
-gulp.task('lint', function(done) {
+gulp.task('lint', function() {
     return gulp.src([CONFIG.paths.app + '**/*.js'])
         .pipe(eslint(CONFIG.eslint))
         .pipe(eslint.format())

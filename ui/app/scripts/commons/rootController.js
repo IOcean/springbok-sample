@@ -3,21 +3,21 @@
     
     angular.module('commons').controller('rootController', rootController);
     
-    rootController.$inject = ['$scope', '$location', '$route', 'navigation', 'notification', 'authenticationService'];
+    rootController.$inject = ['$rootScope', '$location', '$route', 'notification', 'authenticationService'];
     
-    function rootController($scope, $location, $route, navigation, notification, authenticationService) {
+    function rootController($rootScope, $location, $route, notification, authenticationService) {
         var root = this;
      
-        root.currentPage = navigation.currentPage;
+        root.currentPage = $route.current;
         root.spinnerCount = 0;
         root.showSpinner = false;
         
-        $scope.$on('Notify', function (event, type, message) {
+        $rootScope.$on('Notify', function (event, type, message) {
             root.notification = notification.create(type, message);
             notification.display(root.notification);
         });
         
-        $scope.$on('showSpinner', function () {
+        $rootScope.$on('showSpinner', function () {
             root.spinnerCount++;
             
             if (root.spinnerCount !== 0) {
@@ -25,7 +25,7 @@
             }
         });
 
-        $scope.$on('hideSpinner', function () {
+        $rootScope.$on('hideSpinner', function () {
             root.spinnerCount--;
             
             if (root.spinnerCount <= 0) {
@@ -33,29 +33,27 @@
             }
         });
         
-        $scope.$on('$routeChangeSuccess', function (event, current, previous) {
-            navigation.routeChange(current, previous);
-            root.currentPage = navigation.currentPage;
+        $rootScope.$on('$routeChangeSuccess', function (event, current) {
+            root.currentPage = current;
         });
         
-        $scope.$on('AuthenticationChange', function(event) {
-            navigation.routeChange($route.current, $route.previous);
-            root.currentPage = navigation.currentPage;
+        $rootScope.$on('AuthenticationChange', function() {
+            root.currentPage = $route.current;
         });
         
-        $scope.$on('http-error-401'), function() {
-            $scope.$emit('Notify', 'error', 'SECURITY_AUTHENTICATION_REQUIRED');
+        $rootScope.$on('http-error-401', function() {
+            $rootScope.$emit('Notify', 'warning', 'SECURITY_AUTHENTICATION_REQUIRED');
             authenticationService.logout();
             $location.path('/');
-        };
+        });
         
-        $scope.$on('http-error-403'), function() {
-            $scope.$emit('Notify', 'error', 'SECURITY_INSUFFICIENT_CREDENTIALS');
-        };
+        $rootScope.$on('http-error-403', function() {
+            $rootScope.$emit('Notify', 'error', 'SECURITY_INSUFFICIENT_CREDENTIALS');
+        });
         
-        $scope.$on('http-error-404'), function() {
+        $rootScope.$on('http-error-404', function() {
             $location.path('/404');
-        };
+        });
     }
 })();
 
