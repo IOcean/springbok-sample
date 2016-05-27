@@ -1,6 +1,6 @@
 'use strict';
 
-const gulp = require('gulp'),
+var gulp = require('gulp'),
     argv = require('yargs').argv,
     del = require('del'),
     vinylPaths = require('vinyl-paths'),
@@ -52,8 +52,8 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('libraries', function() {
-    const libsCss = CONFIG.libs.all.css.concat(getEnvironmentName() !== 'dev' ? CONFIG.libs.prod.css : CONFIG.libs.dev.css);
-    const libsJs = CONFIG.libs.all.js.concat(getEnvironmentName() !== 'dev' ? CONFIG.libs.prod.js : CONFIG.libs.dev.js);
+    var libsCss = CONFIG.libs.all.css.concat(getEnvironmentName() !== 'dev' ? CONFIG.libs.prod.css : CONFIG.libs.dev.css);
+    var libsJs = CONFIG.libs.all.js.concat(getEnvironmentName() !== 'dev' ? CONFIG.libs.prod.js : CONFIG.libs.dev.js);
     
     gulp.src(libsCss)
         .pipe(plumber())

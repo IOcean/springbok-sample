@@ -1,6 +1,6 @@
 'use strict';
 
-const paths = {
+var paths = {
     app: './app/',
     conf: './conf/',
     assets: './assets/', 
@@ -9,16 +9,16 @@ const paths = {
     build: './dist/'
 };
 
-const server = {
+var server = {
     server: paths.build,
     port: 9090
 };
 
-const eslint = {
+var eslint = {
     envs: ['browser', 'es6']
 };
 
-const libs = {
+var libs = {
     all: {
         css: [
             paths.libs + 'github/necolas/normalize-css@3.0.3/normalize.css',
