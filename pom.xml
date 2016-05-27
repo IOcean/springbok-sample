@@ -226,7 +226,7 @@
                     <webResources>
                         <resource>
                             <directory>ui/dist</directory>
-                            <targetPath>WEB-INF/classes/public/</targetPath>
+                            <targetPath>WEB-INF/classes/public/ui</targetPath>
                         </resource>
                     </webResources>
                 </configuration>
