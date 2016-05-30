@@ -25,7 +25,7 @@
     // Init sprinbok.core module
     app.run(['endpoints', 'session', 'enums', 'pagination', function (endpoints, session, enums, pagination) {
         endpoints.setApiRootPath(CONFIG.api.endpoint);
-        session.setDefaultExpirationDurationInMilliseconds(CONFIG.app.sessionExpirationTimeInSeconds);
+        session.setDefaultExpirationDurationInMilliseconds(CONFIG.app.sessionExpirationTimeInSeconds * 1000);
         enums.load();
         pagination.setDefaultAllMaxPerPage([25, 50, 100, 500, 1000]);
     }]);

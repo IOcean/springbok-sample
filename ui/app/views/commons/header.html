@@ -14,13 +14,13 @@
             </li>
             <li class="green"
                 ng-if="authentication.session.account.authenticated">
-                <a href="#/comptes/utilisateurs/{{authentication.session.account.infos.id}}">
+                <a ng-href="#/comptes/utilisateurs/{{authentication.session.account.infos.id}}">
                     {{'SECURITY_PROFILE' | translate }}
                 </a>
             </li>
             <li class="grey"
                 ng-if="authentication.session.account.authenticated">
-                <a href="#/accueil" ng-click="authentication.logout()">
+                <a ng-href="#/accueil" ng-click="authentication.logout()">
                     <i class="ace-icon fa fa-power-off"></i>
                     {{'SECURITY_LOGOUT' | translate}}
                 </a>

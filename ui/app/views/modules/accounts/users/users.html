@@ -60,7 +60,7 @@
     <tbody>
         <tr ng-repeat="user in users.search.results.content">
             <td>
-                <a href="#/comptes/utilisateurs/{{user.id}}">
+                <a ng-href="#/comptes/utilisateurs/{{user.id}}">
                     {{user.username}}
                 </a>
             </td>

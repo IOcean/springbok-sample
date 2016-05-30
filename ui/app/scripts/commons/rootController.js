@@ -33,27 +33,27 @@
             }
         });
         
-        $rootScope.$on('$routeChangeSuccess', function (event, current) {
+        $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
             root.currentPage = current;
         });
         
-        $rootScope.$on('AuthenticationChange', function() {
+        $rootScope.$on('AuthenticationChange', function(event) {
             root.currentPage = $route.current;
         });
         
-        $rootScope.$on('http-error-401', function() {
-            $rootScope.$emit('Notify', 'warning', 'SECURITY_AUTHENTICATION_REQUIRED');
+        $rootScope.$on('http-error-401'), function() {
+            $rootScope.$emit('Notify', 'error', 'SECURITY_AUTHENTICATION_REQUIRED');
             authenticationService.logout();
             $location.path('/');
-        });
+        };
         
-        $rootScope.$on('http-error-403', function() {
+        $rootScope.$on('http-error-403'), function() {
             $rootScope.$emit('Notify', 'error', 'SECURITY_INSUFFICIENT_CREDENTIALS');
-        });
+        };
         
-        $rootScope.$on('http-error-404', function() {
+        $rootScope.$on('http-error-404'), function() {
             $location.path('/404');
-        });
+        };
     }
 })();
 
