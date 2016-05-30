@@ -27,8 +27,8 @@ module.exports = function(config) {
       'jspm_packages/github/angular-translate/bower-angular-translate@2.9.2/angular-translate.js',
       'jspm_packages/github/angular-translate/bower-angular-translate-loader-static-files@2.9.2/angular-translate-loader-static-files.js',
       'jspm_packages/github/angular-translate/bower-angular-translate-handler-log@2.9.2/angular-translate-handler-log.js',
-      'jspm_packages/iocean/springbok/springbok-spa-core@master/dist/springbok-spa-core.js',
-      'jspm_packages/iocean/springbok/springbok-spa-security@master/dist/springbok-spa-security.js',
+      'jspm_packages/github/iocean/springbok-spa-core@master/dist/springbok-spa-core.js',
+      'jspm_packages/github/iocean/springbok-spa-security@master/dist/springbok-spa-security.js',
       'app/**/*.js',
       'conf/**/*.js',
       'test/**/*.spec.js'
