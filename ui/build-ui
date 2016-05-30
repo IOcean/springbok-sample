@@ -3,4 +3,5 @@ npm install &&
 jspm clean &&
 jspm install &&
 gulp clean &&
+gulp test &&
 gulp build $1
