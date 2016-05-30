@@ -1,6 +1,6 @@
 const CONFIG = {
     api : {
-        endpoint: 'http://vm-linux-spring-ajs.ioceannt.fr:8080/api/'
+        endpoint: '/api/'
     },
     app: {
         sessionExpirationTimeInSeconds: 3600,
